@@ -3,7 +3,7 @@
 
 > Recuerda poner las imágenes.
 
-Imagen 1
+Comprobación 2.1
 
 ![](./image1.png)
 
