@@ -1,4 +1,4 @@
-#A2 : ACCESO REMOTO CON SSH
+# A2 : ACCESO REMOTO CON SSH
 >Estilo rúbrica.
 
 Teniendo en cuenta :
@@ -23,4 +23,4 @@ Sistema Operativo :	 	Windows7
 IP : *172.19.16.12*  
 Nombre: ***ssh-client16w***
 
-##(2.2) Primera conexión SSH GNU/Linux
+## (2.2) Primera conexión SSH GNU/Linux
