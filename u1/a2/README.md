@@ -3,7 +3,7 @@
 
 Teniendo en cuenta :
 
-Función : **Un servidor SSH**  
+Función : **Un servidor SSH**   
 Sistema Operativo : GNU/Linux OpenSUSE (Sin entorno gráfico)  
 IP : *172.19.16.31*  
 Nombre: ***ssh-server16g***
@@ -52,3 +52,35 @@ Nombre: ***ssh-client16w***
 ![conexión vía ssh](img/3.2.0.png)
 
 ![conexión vía ssh](img/3.2.1.png)
+
+## (5) Autenticación mediante clave pública :sparkles:
+
+- Vamos a la `máquina ssh-client16g`.
+- Iniciamos sesión con nuestro el usuario nombre-alumno de la máquina `ssh-client16g`.
+
+- `ssh-keygen -t rsa` para generar un nuevo par de claves para el usuario en:
+
+    ***/home/iria/.ssh/id_rsa
+    /home/iria/.ssh/id_rsa.pub***
+
+- Ahora vamos a copiar la clave pública (`id_rsa.pub`), al fichero "authorized_keys" del usuario remoto **rodriguez4** que está definido en el servidor.
+
+- Comprobar que ahora al acceder remotamente vía SSH
+
+### Desde ssh-client16g, NO se pide password.
+
+![conexión vía ssh](img/5.1.png)
+
+### Desde ssh-client16w, SI se pide el password.
+
+![conexión vía ssh](img/5.0.png)
+
+## (6) Uso de SSH como túnel para X :sparkles:
+
+![conexión vía ssh](img/6.0.png)
+
+![conexión vía ssh](img/6.1.png)
+
+![conexión vía ssh](img/6.3.png)
+
+![conexión vía ssh](img/6.4.png)
