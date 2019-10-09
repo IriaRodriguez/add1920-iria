@@ -37,3 +37,18 @@ Nombre: ***ssh-client16w***
 - Desde el **cliente** GNU/Linux nos conectamos mediante ssh `rodriguez1@ssh-server16g`.
 
 ![conexión vía ssh](img/2.2.2.png)
+
+![conexión vía ssh](img/2.2.3.png)
+
+- Comprobamos el contenido del fichero `$HOME/.ssh/known_hosts` en el equipo **ssh-client1**
+
+![conexión vía ssh](img/2.2.4.png)
+
+![conexión vía ssh](img/2.2.5.png)
+
+## (3.2) Comprobamos :sparkles:
+- Comprobamos qué sucede al volver a conectarnos desde los dos clientes, usando los usuarios rodriguez2 y rodriguez1.
+
+![conexión vía ssh](img/3.2.0.png)
+
+![conexión vía ssh](img/3.2.1.png)
