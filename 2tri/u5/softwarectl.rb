@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'colorize'
+
 #
 option = ARGV[0]
 filename = ARGV[1]
@@ -8,9 +8,9 @@ filename = ARGV[1]
 def check(f_package)
   status = `whereis #{f_package[0]} |grep bin |wc -l`.to_i
     if status == 0
-      puts "#{f_package[0]} ->  (U) uninstalled".colorize(:yellow)
+      puts "#{f_package[0]} ->  (U) uninstalled"
     elsif status == 1
-      puts "#{f_package[0]} ->  (I) installed".colorize(:green)
+      puts "#{f_package[0]} ->  (I) installed"
     end
 
 end
@@ -23,41 +23,40 @@ def install(f_package)
   if action == "install"
     if status == 0
       `apt-get install -y #{f_package[0]}`
-      puts "#{f_package[0]} -> (I) installed".colorize(:green)
+      puts "#{f_package[0]} -> (I) installed"
     elsif status == 1
-      puts "#{f_package[0]} -> (I) ya está instalado".colorize(:green)
+      puts "#{f_package[0]} -> (I) is already installed"
     end
 #
   elsif action == "remove"
       if status == 1
         `apt-get remove -y  #{f_package[0]}`
-        puts "#{f_package[0]} -> (U) uninstalled".colorize(:yellow)
+        puts "#{f_package[0]} -> (U) uninstalled"
       elsif status == 0
-        puts "#{f_package[0]} -> (U) no está instalado".colorize(:yellow)
+        puts "#{f_package[0]} -> (U) isn't installed"
       end
   end
 end
-#O
+# [ Muestra en pantalla la ayuda. ]
 if option == '--help'
   puts 'Usage:
         systemctml [OPTIONS] [FILENAME]
 Options:
-        --help, mostrar esta ayuda.
-        --version, mostrar información sobre el autor del script
-                   y fecha de creación.
-        --status FILENAME, comprueba si puede instalar/desintalar.
-        --run FILENAME, instala/desinstala el software indicado.
-Description:
-        Este script se encarga de instalar/desinstalar
-        el software indicado en el fichero FILENAME.
-        Ejemplo de FILENAME:
+        --help, 🌏 Show this help.
+        --version, 📍 Show information about the author of the script and creation date.
+        --status FILENAME.txt, ⏪ Check if you can install / uninstall.
+        --run FILENAME.txt, 🚐 Install / uninstall the indicated software.
+Description :
+        This script is responsible for installing / uninstalling
+        the software indicated in the FILENAME file ✍.
+        FILENAME example:
         tree:install
         nmap:install
         atomix:remove'
 #
 elsif option == '--version'
-  puts 'Autora:Iria Rodríguez Hernández
-Fecha: 14/01/20'
+  puts 'Author: Iria Rodríguez Hernández
+Date: 14/01/20'
 
 elsif option == '--status'
   file = `cat #{filename}`
@@ -68,7 +67,7 @@ elsif option == '--status'
   end
 
 elsif option.nil?
-  puts 'Se aconseja el uso de "--help" para ver la ayuda.'
+  puts 'The use of "--help" is recommended to see the help.😉'
 
 elsif option == '--run'
   user = `id -u`.to_i
@@ -82,7 +81,7 @@ elsif option == '--run'
     end
 
   elsif user != 0
-    puts "Se necesita ser usuario root para ejecutar el script".colorize(:yellow)
+    puts "You need the root user to run script. "
     exit 1
   end
 end
