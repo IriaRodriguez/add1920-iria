@@ -23,7 +23,7 @@ def install(f_package)
   if action == "install"
     if status == 0
       `apt-get install -y #{f_package[0]}`
-      puts "#{f_package[0]} -> (I) installing"
+      puts "#{f_package[0]} -> (I) installing📥"
     elsif status == 1
       puts "#{f_package[0]} -> (I) is already installed"
     end
@@ -33,7 +33,7 @@ def install(f_package)
         `apt-get remove -y  #{f_package[0]}`
         puts "#{f_package[0]} -> (U) uninstalling"
       elsif status == 0
-        puts "#{f_package[0]} -> (U) isn't installed"
+        puts "#{f_package[0]} -> (U) isn't installed🙄"
       end
   end
 end
@@ -57,7 +57,7 @@ Description :
 elsif option == '--version'
   puts 'Author: Iria Rodríguez Hernández
 Date: 14/01/20'
-
+#[ Check if you can install / uninstall.]
 elsif option == '--status'
   puts 'Status:'
   file = `cat #{filename}`
@@ -70,9 +70,9 @@ elsif option == '--status'
 elsif option.nil?
   puts 'The use of "--help" is recommended to see the help.😉'
 
+#[ Install / uninstall the indicated software.]
 elsif option == '--run'
   user = `id -u`.to_i
-
   if user == 0
     puts "Run.#{filename} :"
     file = `cat #{filename}`
@@ -83,7 +83,7 @@ elsif option == '--run'
     end
 
   elsif user != 0
-    puts "You need the root user to run script. "
+    puts "You need the root user to run script.🔑 "
     exit 1
   end
 end
