@@ -12,32 +12,32 @@ def check(f_package)
     elsif status == 1
       puts "#{f_package[0]} ->  (I) installed"
     end
-
 end
-#
 
+#[ Instala el software. ]
 def install(f_package)
   status = `whereis #{f_package[0]} |grep bin |wc -l`.to_i
   action = "#{f_package[1]}".to_s
 
+#[ Install the software. ]
   if action == "install"
     if status == 0
       `apt-get install -y #{f_package[0]}`
-      puts "#{f_package[0]} -> (I) installed"
+      puts "#{f_package[0]} -> (I) installing"
     elsif status == 1
       puts "#{f_package[0]} -> (I) is already installed"
     end
-#
+#[ Uninstall the software. ]
   elsif action == "remove"
       if status == 1
         `apt-get remove -y  #{f_package[0]}`
-        puts "#{f_package[0]} -> (U) uninstalled"
+        puts "#{f_package[0]} -> (U) uninstalling"
       elsif status == 0
         puts "#{f_package[0]} -> (U) isn't installed"
       end
   end
 end
-# [ Muestra en pantalla la ayuda. ]
+# [ Show this help. ]
 if option == '--help'
   puts 'Usage:
         systemctml [OPTIONS] [FILENAME]
@@ -53,12 +53,13 @@ Description :
         tree:install
         nmap:install
         atomix:remove'
-#
+# [ Show information about the author of the script and creation date.]
 elsif option == '--version'
   puts 'Author: Iria Rodríguez Hernández
 Date: 14/01/20'
 
 elsif option == '--status'
+  puts 'Status:'
   file = `cat #{filename}`
   f_lines = file.split("\n")
   f_lines.each do |a|
@@ -73,6 +74,7 @@ elsif option == '--run'
   user = `id -u`.to_i
 
   if user == 0
+    puts "Run.#{filename} :"
     file = `cat #{filename}`
     f_lines = file.split("\n")
     f_lines.each do |a|
