@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'colorize'
-
+#
 option = ARGV[0]
 filename = ARGV[1]
 
@@ -14,6 +14,7 @@ def check(f_package)
     end
 
 end
+#
 
 def install(f_package)
   status = `whereis #{f_package[0]} |grep bin |wc -l`.to_i
@@ -26,7 +27,7 @@ def install(f_package)
     elsif status == 1
       puts "#{f_package[0]} -> (I) ya está instalado".colorize(:green)
     end
-
+#
   elsif action == "remove"
       if status == 1
         `apt-get remove -y  #{f_package[0]}`
@@ -36,7 +37,7 @@ def install(f_package)
       end
   end
 end
-
+#O
 if option == '--help'
   puts 'Usage:
         systemctml [OPTIONS] [FILENAME]
@@ -53,10 +54,10 @@ Description:
         tree:install
         nmap:install
         atomix:remove'
-
+#
 elsif option == '--version'
-  puts 'Autor: Alberto Hernández
-Fecha: 08/01/20'
+  puts 'Autora:Iria Rodríguez Hernández
+Fecha: 14/01/20'
 
 elsif option == '--status'
   file = `cat #{filename}`
