@@ -14,7 +14,6 @@ def check(f_package)
     end
 end
 
-#[ Instala el software. ]
 def install(f_package)
   status = `whereis #{f_package[0]} |grep bin |wc -l`.to_i
   action = "#{f_package[1]}".to_s
