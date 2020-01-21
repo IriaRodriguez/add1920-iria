@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'telegram/bot'
+
+token = `cat /etc/bot16/token`.strip
+Telegram::Bot::Client.run(token) do |bot|
+  bot.listen do |message|
+    case message.text
+    when '/start'
+      bot.api.send_message(chat_id: message.chat.id, text: "I am the Iria's bot😉!, My commands are:
+        /wordpress to see my page in wordpress 🌍
+        /map to see the location of my town 📍
+        /github to know what my GitHub account is like 😼
+        /twitter to know what my Twitter account is like 🐥")
+    when '/wordpress'
+      bot.api.send_message(chat_id: message.chat.id, text: "Welcome to https://wordpress.alu4709.me/")
+    when '/map'
+      bot.api.send_location(chat_id: message.chat.id, latitude: 28.411403, longitude: -16.544951)
+    when '/github'
+      bot.api.send_message(chat_id: message.chat.id, text: "Welcome to https://github.com/IriaRodriguez/")
+    when '/twitter'
+      bot.api.send_message(chat_id: message.chat.id, text: "Welcome to https://twitter.com/itsiri_/")
+   end
+  end
+end
