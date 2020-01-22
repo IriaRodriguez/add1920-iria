@@ -8,6 +8,7 @@ Vamos a crear un servicio de Systemd que iniciará un Bot de Telegram.
 ![2](img/2.png)
 ![3](img/3.png)
 
+ :fast_forward: :fast_forward: [Script del bot](https://github.com/IriaRodriguez/add1920-iria/blob/master/2tri/u5/p2/bot16d)
 
 ##  :star: 2. Systemd
 
@@ -31,6 +32,8 @@ Lo más cómodo para parar el servicio es systemctl stop bot16, pero también po
 
     kill -9 PID, emitimos una señal/orden (-9) al proceso (PID). La señal -9 ordena al proceso que "muera" (que se cierre).
 ![7](img/7.png)
+
+ :fast_forward: :fast_forward: [Bot service](https://github.com/IriaRodriguez/add1920-iria/blob/master/2tri/u5/p2/bot16.service)
 
 ##  :star: 3. Programar tareas
 
@@ -91,3 +94,5 @@ Escribir algo parecido a lo siguiente:
 ![12](img/12.png)
 
 ![13](img/13.png)
+
+ :fast_forward: :fast_forward: [Bot controller](https://github.com/IriaRodriguez/add1920-iria/blob/master/2tri/u5/p2/bot16controller)
