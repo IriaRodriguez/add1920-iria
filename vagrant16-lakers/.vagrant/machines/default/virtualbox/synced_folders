@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/asir/Documentos/add1920-iria/vagrant16-lakers/html","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/asir/Documentos/add1920-iria/vagrant16-lakers","disabled":false,"__vagrantfile":true}}}
